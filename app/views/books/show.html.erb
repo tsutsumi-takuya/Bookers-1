@@ -1,18 +1,21 @@
-<div class="color">
-<% if flash[:notice] %>
-  <p><%= flash[:notice] %></p>
-<% end %>
+<div class="container" align="center">
+
+	<div class="color">
+		<% if flash[:notice] %>
+			<p><%= flash[:notice] %></p>
+		<% end %>
+	</div>
+
+	<p>
+		<strong>Title :</strong>
+		<%= @book.title %>
+	</p>
+	<p>
+		<strong>Body :</strong>
+		<%= @book.body %>
+	</p>
+
+	<%= link_to 'Edit', edit_book_path(@book.id) %> |
+	<%= link_to 'Back', books_path %>
+
 </div>
-
-<p>
-<strong>Title:</strong>
-<%= @book.title %>
-</p>
-
-<p>
-<strong>Body:</strong>
-<%= @book.body %>
-</p>
-
-<%= link_to 'Edit', edit_book_path(@book.id) %> |
-<%= link_to 'Back', books_path %>
